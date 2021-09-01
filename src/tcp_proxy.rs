@@ -56,9 +56,9 @@ async fn proxy_reader_writer<'a, R: ?Sized, W: ?Sized>(
     reader: &'a mut R,
     writer: &'a mut W,
 ) -> std::io::Result<()>
-where
-    R: AsyncRead + Unpin,
-    W: AsyncWrite + Unpin,
+    where
+        R: AsyncRead + Unpin,
+        W: AsyncWrite + Unpin,
 {
     let bytes_submitted = tokio::io::copy(reader, writer).await?;
     info!("{} {}", direction, bytes_submitted);

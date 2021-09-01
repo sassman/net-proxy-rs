@@ -1,4 +1,4 @@
-use clap::{crate_authors, crate_description, crate_version, App, AppSettings, Arg, ArgMatches};
+use clap::{App, AppSettings, Arg, ArgMatches, crate_authors, crate_description, crate_version};
 
 pub fn get_cli_args() -> ArgMatches<'static> {
     App::new("net-proxy")
@@ -36,7 +36,7 @@ pub fn get_cli_args() -> ArgMatches<'static> {
                 .long("port")
                 .takes_value(true)
                 .required(true)
-                .default_value("2525")
+                .default_value("10443")
                 .help("local port where the proxy will listening"),
         )
         .arg(
@@ -53,7 +53,7 @@ pub fn get_cli_args() -> ArgMatches<'static> {
                 .long("server-port")
                 .takes_value(true)
                 .required(true)
-                .default_value("25")
+                .default_value("443")
                 .help("remote net server port"),
         )
         .get_matches()

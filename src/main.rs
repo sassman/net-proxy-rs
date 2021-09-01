@@ -1,8 +1,9 @@
-use crate::tcp_proxy::start_tcp_proxy;
-use crate::udp_proxy::start_udp_proxy;
 use anyhow::Result;
 use clap::ArgMatches;
 use log::debug;
+
+use crate::tcp_proxy::start_tcp_proxy;
+use crate::udp_proxy::start_udp_proxy;
 
 mod cli;
 mod tcp_proxy;
