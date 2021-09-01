@@ -11,6 +11,7 @@
 ```sh
 cargo install --path .
 ```
+
 > NOTE: checkout the `--help` options for all features
 
 ```sh
