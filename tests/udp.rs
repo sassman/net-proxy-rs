@@ -24,11 +24,11 @@ fn it_forwards_to_the_remote_side() {
         println!("foo");
     });
 
-    let proxy = start_udp_proxy();
+    let mut proxy = start_udp_proxy();
 
     // Create a scope guard using `defer!` for the current scope
     defer! {
-        proxy.kill();
+        proxy.kill().unwrap();
     }
 
     // simulating a client
@@ -41,7 +41,7 @@ fn it_forwards_to_the_remote_side() {
 }
 
 fn start_udp_proxy() -> Child {
-    let mut proxy = binary()
+    let proxy = binary()
         .arg("--verbose")
         .arg("--udp")
         .arg("--server")

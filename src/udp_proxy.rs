@@ -29,7 +29,7 @@ pub async fn start_udp_proxy(local_addr: &str, remote_addr: &str) -> Result<()> 
         }
     })
     .await
-    .map_err(|e| anyhow::Error::from(e))
+    .map_err(anyhow::Error::from)
 }
 
 async fn proxy_to_remote(origin: &mut UdpSocket, remote_addr: &str) -> Result<()> {

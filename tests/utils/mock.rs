@@ -12,8 +12,10 @@ pub struct Mock {
 /// get an udp socket that acts as remote
 ///
 pub fn remote() -> Mock {
-    let mut remote = UdpSocket::bind("0.0.0.0:44310").unwrap();
-    remote.set_read_timeout(Some(Duration::from_secs(5)));
+    let remote = UdpSocket::bind("0.0.0.0:44310").unwrap();
+    remote
+        .set_read_timeout(Some(Duration::from_secs(5)))
+        .unwrap();
     Mock {
         remote,
         proxy_addr: PROXY_ADDR.parse().unwrap(),
@@ -25,7 +27,7 @@ pub fn remote() -> Mock {
 ///
 pub fn client() -> UdpSocket {
     let addr = "0.0.0.0:0".parse::<SocketAddr>().unwrap();
-    let mut c = UdpSocket::bind(&addr).unwrap();
+    let c = UdpSocket::bind(&addr).unwrap();
     c.connect(PROXY_ADDR.parse::<SocketAddr>().unwrap())
         .unwrap();
 
