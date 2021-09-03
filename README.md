@@ -1,4 +1,4 @@
-# tcp and upd network proxy server
+# tcp and udp network proxy server
 
 [![crates.io](https://img.shields.io/crates/v/net-proxy.svg)](https://crates.io/crates/net-proxy)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
