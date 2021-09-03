@@ -1,4 +1,4 @@
-use clap::{App, AppSettings, Arg, ArgMatches, crate_authors, crate_description, crate_version};
+use clap::{crate_authors, crate_description, crate_version, App, AppSettings, Arg, ArgMatches};
 
 pub fn get_cli_args() -> ArgMatches<'static> {
     App::new("net-proxy")
