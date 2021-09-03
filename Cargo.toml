@@ -9,7 +9,7 @@ license = "MIT"
 [dependencies]
 clap = "2.33"
 log = "0.4"
-env_logger = "0.8"
+env_logger = "0.9"
 anyhow = "1.0"
 tokio = { version = "1", features = ["full", "tracing"] }
 tokio-util = { version = "0.6", features = ["full"] }
